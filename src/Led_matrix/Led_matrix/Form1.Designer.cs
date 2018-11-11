@@ -1237,7 +1237,7 @@
             this.Controls.Add(this.led_07);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Led matrix MAX72198";
+            this.Text = "Led matrix MAX7219";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

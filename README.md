@@ -1,5 +1,5 @@
 # Led matrix MAX7219
-Send to the led matrix the value by the serial port
+Generate leds matrix model and send it to the leds matrix by the serial port
 
 ## Install
 

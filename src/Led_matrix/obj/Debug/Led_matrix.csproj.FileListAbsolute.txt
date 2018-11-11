@@ -1,0 +1,10 @@
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\bin\Debug\Led_matrix.exe.config
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\bin\Debug\Led_matrix.exe
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\bin\Debug\Led_matrix.pdb
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.csprojResolveAssemblyReference.cache
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.Form1.resources
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.Properties.Resources.resources
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.csproj.GenerateResource.cache
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.exe
+C:\Users\Admin\source\repos\Led_matrix\Led_matrix\obj\Debug\Led_matrix.pdb

@@ -15,12 +15,17 @@ namespace Led_matrix {
             InitializeComponent();
         }
 
+        #region Vars
+
         // Led value
         private Color ON = Color.Red;
         private Color OFF = Color.White;
 
         // Serial to send on COM port
         Serial serial = null;
+        #endregion
+
+        #region Controls
 
         /// <summary>
         /// Load serial and get all serial ports
@@ -48,6 +53,66 @@ namespace Led_matrix {
             }
             GenLedByte();
         }
+
+        /// <summary>
+        /// Copy leds string of byte array (leds position) to clipboard
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BT_copy_Click(object sender, EventArgs e) {
+            Clipboard.SetText(TB_leds_byte.Text);
+            TSSL_message.Text = DateTime.Now.ToString("hh:mm:ss") + $" Copied to clipboard";
+        }
+
+        /// <summary>
+        /// Fill all leds
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BT_select_all_Click(object sender, EventArgs e) {
+            FillLed(true);
+        }
+
+        /// <summary>
+        /// Clear all leds
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BT_clear_Click(object sender, EventArgs e) {
+            FillLed(false);
+        }
+
+        /// <summary>
+        /// Send to the serial port the leds matrix datas
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BT_send_Click(object sender, EventArgs e) {
+            List<byte> leds = new List<byte>();
+            foreach (string str in TB_leds_byte.Text.Split(',')) {
+                leds.Add(byte.Parse(str.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber));
+            }
+            TSSL_message.Text = DateTime.Now.ToString("hh:mm:ss") + $" {serial.WriteDatas(CB_serial_port.Text, leds.ToArray())}";
+        }
+
+        /// <summary>
+        /// Disabled key press on combobox
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CB_serial_port_KeyPress(object sender, KeyPressEventArgs e) {
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Remove highlight on combobox focus
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void CB_serial_port_SelectedIndexChanged(object sender, EventArgs e) {
+            BT_send.Focus();
+        }
+        #endregion
 
         /// <summary>
         /// Generate string of byte array (leds position)
@@ -98,47 +163,6 @@ namespace Led_matrix {
                 }
             }
             GenLedByte();
-        }
-
-        /// <summary>
-        /// Copy leds string of byte array (leds position) to clipboard
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BT_copy_Click(object sender, EventArgs e) {
-            Clipboard.SetText(TB_leds_byte.Text);
-            TSSL_message.Text = DateTime.Now.ToString("hh:mm:ss") + $" Copied to clipboard";
-        }
-
-        /// <summary>
-        /// Fill all leds
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BT_select_all_Click(object sender, EventArgs e) {
-            FillLed(true);
-        }
-
-        /// <summary>
-        /// Clear all leds
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BT_clear_Click(object sender, EventArgs e) {
-            FillLed(false);
-        }
-
-        /// <summary>
-        /// Send to the serial port the leds matrix datas
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void BT_send_Click(object sender, EventArgs e) {
-            List<byte> leds = new List<byte>();
-            foreach (string str in TB_leds_byte.Text.Split(',')) {
-                leds.Add(byte.Parse(str.Replace("0x", ""), System.Globalization.NumberStyles.HexNumber));
-            }
-            TSSL_message.Text = DateTime.Now.ToString("hh:mm:ss") + $" {serial.WriteDatas(CB_serial_port.Text, leds.ToArray())}";
         }
 
         /// <summary>

@@ -1063,7 +1063,7 @@
             // 
             // BT_copy
             // 
-            this.BT_copy.Location = new System.Drawing.Point(42, 56);
+            this.BT_copy.Location = new System.Drawing.Point(42, 57);
             this.BT_copy.Name = "BT_copy";
             this.BT_copy.Size = new System.Drawing.Size(99, 23);
             this.BT_copy.TabIndex = 69;
@@ -1073,7 +1073,7 @@
             // 
             // BT_select_all
             // 
-            this.BT_select_all.Location = new System.Drawing.Point(13, 19);
+            this.BT_select_all.Location = new System.Drawing.Point(13, 21);
             this.BT_select_all.Name = "BT_select_all";
             this.BT_select_all.Size = new System.Drawing.Size(75, 23);
             this.BT_select_all.TabIndex = 72;
@@ -1083,7 +1083,7 @@
             // 
             // BT_clear
             // 
-            this.BT_clear.Location = new System.Drawing.Point(94, 19);
+            this.BT_clear.Location = new System.Drawing.Point(91, 21);
             this.BT_clear.Name = "BT_clear";
             this.BT_clear.Size = new System.Drawing.Size(75, 23);
             this.BT_clear.TabIndex = 73;
@@ -1132,14 +1132,16 @@
             this.CB_serial_port.Size = new System.Drawing.Size(110, 21);
             this.CB_serial_port.TabIndex = 76;
             this.CB_serial_port.Text = "Select serial port";
+            this.CB_serial_port.SelectedIndexChanged += new System.EventHandler(this.CB_serial_port_SelectedIndexChanged);
+            this.CB_serial_port.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CB_serial_port_KeyPress);
             // 
             // BT_send
             // 
-            this.BT_send.Location = new System.Drawing.Point(50, 55);
+            this.BT_send.Location = new System.Drawing.Point(54, 54);
             this.BT_send.Name = "BT_send";
-            this.BT_send.Size = new System.Drawing.Size(82, 23);
+            this.BT_send.Size = new System.Drawing.Size(75, 23);
             this.BT_send.TabIndex = 74;
-            this.BT_send.Text = "Send to COM";
+            this.BT_send.Text = "Send";
             this.BT_send.UseVisualStyleBackColor = true;
             this.BT_send.Click += new System.EventHandler(this.BT_send_Click);
             // 

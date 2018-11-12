@@ -1,5 +1,5 @@
 # Led matrix (MAX7219) and Arduino UNO
-Generate led matrix model and send it to the led matrix module through the serial port.
+Generate led matrix model and send it to the led matrix module through the USB.
 
 <p align="middle" ><img src="/images/base_connection.png" alt="Led matrix app" width="600"></p>
 	
@@ -24,24 +24,24 @@ To send the led matrix model to the led matrix module, we must have 3 things:
 - Arduino led matrix library
 - Led matrix generator
 
-### Arduino sketch serial
+### Arduino sketch
 
 First, we must import the led matrix [library](/src/arduino/lib/LedControl.zip) to the Arduino IDE: `Sketch->Import Library->Add Library`. Then open and upload the Arduino sketch [file (led_matrix_serial.ino)](/src/arduino/led_matrix/led_matrix_serial.ino) to your Arduino UNO.
 
 ### Led matrix generator
 
 With the led matrix MAX2719 [program (Led_matrix.exe)](/src/Led_matrix/Led_matrix/bin/Debug/Led_matrix.exe), you can do 2 things:
-- Send through the serial port the current led model
+- Send through the USB the current led model
 - Generate raw byte array from led model and paste it into Arduino sketch file
 
 <p align="middle" ><img src="/images/led_matrix_app.png" alt="Led matrix app" width="400"></p>
 
-### Send through serial
+### Send through the USB
 
 If the Arduino sketch [file (led_matrix_serial.ino)](/src/arduino/led_matrix/led_matrix_serial.ino) is open and uploaded to the Arduino UNO, select the serial port attached to your Arduino and click `Send`. You will see the current led matrix model applied to the led matrix module.
 
 ### Generate raw byte array (string)
-If you don't want to set the led matrix module through the serial port, open the Arduino sketch [file (led_matrix.ino)](/src/arduino/led_matrix/led_matrix.ino) to your Arduino UNO. Then, click on `Copy to clipboard` and paste the led matrix model "byte array string" to your Arduino sketch like the following: 
+If you don't want to set the led matrix module through the USB, open the Arduino sketch [file (led_matrix.ino)](/src/arduino/led_matrix/led_matrix.ino) to your Arduino UNO. Then, click on `Copy to clipboard` and paste the led matrix model "byte array string" to your Arduino sketch like the following: 
 
 	byte leds[8] = {<copied byte array string>};  
 	byte leds[8] = {0x00,0x18,0x24,0x42,0x42,0x24,0x18,0x00}; 

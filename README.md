@@ -38,7 +38,7 @@ With the led matrix MAX2719 [program (Led_matrix.exe)](/src/Led_matrix/Led_matri
 
 ### Send through serial
 
-If the Arduino sketch [file (led_matrix.ino)](/src/arduino/led_matrix_serial/led_matrix_serial.ino) is open and uploaded to the Arduino UNO, select the serial port attached to your Arduino and click `Send`. You will see the current led matrix model applied to the led matrix module.
+If the Arduino sketch [file (led_matrix_serial.ino)](/src/arduino/led_matrix/led_matrix_serial.ino) is open and uploaded to the Arduino UNO, select the serial port attached to your Arduino and click `Send`. You will see the current led matrix model applied to the led matrix module.
 
 ### Generate raw byte array (string)
 If you don't want to set the led matrix module through the serial port, open the Arduino sketch [file (led_matrix.ino)](/src/arduino/led_matrix/led_matrix.ino) to your Arduino UNO. Then, click on `Copy to clipboard` and paste the led matrix model "byte array string" to your Arduino sketch like the following: 

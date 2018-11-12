@@ -48,7 +48,7 @@ If you don't want to set the led matrix module through the serial port, open the
 
 ## Test
 
-We can see that that we can simply change the led state
+We can see that that we can easily change the led state with the led matrix model.
 
 <p align="middle" ><img src="/images/test_serial.gif" alt="Led matrix app" width="800"></p>
 
